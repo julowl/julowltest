@@ -1,18 +1,20 @@
 #1 нужен массив 2-5000
 #2 нужен пустой массив чтобы оттуда достать?
 ##второй цийл я тупо не поняла
-a = list(range(2, 5000))
-b = []
-def is_prime(n: int) -> int:
-    for i in range(2, n):
-        if n % i == 0:
-            return 0
-    return n
-for p in a:
-    r = is_prime(p)
-    if r != 0:
-        b.append(r)
-print(b)
+
+otvet_massive = []# пустой список
+def is_prime(n: int) -> bool: # тут функция говорит что будет отдавать тру или фолс
+    for i in range(2, n):#тут цикл с массивос от 2 до n-1
+        if n % i == 0: #тут мы проверяем делится ли n на число из масива без остатка
+            return False # если поделилось говорит фолс и заканчивает цикл
+    return True # если n не поделилось без остатка число записываем в пустой список
+
+
+for p in range(2, 50):#
+    if is_prime(p):
+        otvet_massive.append(p)#добавляется нужное число в массив
+        print(otvet_massive)
+print(otvet_massive)
 
 
 
