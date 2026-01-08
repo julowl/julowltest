@@ -12,3 +12,4 @@ def kvadrat(a, b, c):
         return [x]
     else:
         return []
+    # сложно пока
