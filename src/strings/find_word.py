@@ -55,7 +55,7 @@ for word in words:
 print(count)
 
 #3.
-s = s.lower()
+s:str = s.lower()
 words = s.split()
 count = 0
 for lit in s:
@@ -63,4 +63,5 @@ for lit in s:
         count = count + 1
 print(count)
 
+s.lower()
 
