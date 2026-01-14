@@ -22,9 +22,9 @@ If he hadn’t, he might have found it harder to concentrate on drills that morn
 
 He’d forgotten all about the people in cloaks until he passed a group of them next to the baker’s. He eyed them angrily as he passed. He didn’t know why, but they made him uneasy. This lot were whispering excitedly, too, and he couldn’t see a single collecting tin. It was on his
 """
-for line in s.split("\n"):
-    if "for" in line.lower():
-        print(line)
+#for line in s.split("\n"):
+#    if "for" in line.lower():
+#        print(line)
 
 
 # Найди самое длинное слово. Длинна строки делается так len(line)
@@ -32,3 +32,35 @@ for line in s.split("\n"):
 # Посчитай сколько в строке слов, начинающихся на for, учитывая и не учитывая регистр
 
 # сколько раз встречается буква 'a'
+
+
+#1.
+for line in ".,!?:;-":
+    s= s.replace(line, "")
+words = s.split()
+long_word = ""
+for word in words:
+    if len(word) > len(long_word):
+        long_word = word
+
+print(long_word)
+
+#2.
+s = s.lower()
+words = s.split()
+count = 0
+for word in words:
+    if word.startswith("for"):
+        count = count + 1
+print(count)
+
+#3.
+s = s.lower()
+words = s.split()
+count = 0
+for lit in s:
+    if lit == "a":
+        count = count + 1
+print(count)
+
+
