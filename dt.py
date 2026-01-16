@@ -40,7 +40,7 @@
 
 #print((1245**13+20**5**3-40)*400)
 
-a = int(input())
-b = int(input())
-c = int(input())
-print((a**c+b**c)**(a*b))
+#a = int(input())
+#b = int(input())
+#c = int(input())
+#print((a**c+b**c)**(a*b))
