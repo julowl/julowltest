@@ -98,13 +98,88 @@
 # Функция принимает n и возвращает сумму только тех чисел, которые:
 # чётные, и больше 5
 
-def sum_numb(num: int):
-    summ = 0
-    for i in range(2, num+1):
-        if i % 2 == 0:
-            if i > 5 :
-                summ += i
-    return summ
-print(sum_numb(2))
-print(sum_numb(8))
-print(sum_numb(10))
+# def sum_numb(num: int):
+#     summ = 0
+#     for i in range(2, num+1):
+#         if i % 2 == 0:
+#             if i > 5 :
+#                 summ += i
+#     return summ
+# print(sum_numb(2))
+# print(sum_numb(8))
+# print(sum_numb(10))
+
+# Напиши функцию, которая: принимает строку
+# считает сколько в ней цифр
+# возвращает это число
+
+
+# def count_num(s :str) ->int:
+#     count = 0
+#     for lit in s:
+#         if lit.isdigit():
+#             count +=1
+#     return count
+# print(count_num("sdfg453dfg"))
+
+# Напиши функцию, которая: принимает строку
+# считает сколько в ней букв
+# возвращает это число
+
+# def count_st(st :str) ->int:
+#      count = 0
+#      for lit in st:
+#         if lit.isalpha():
+#             count +=1
+#      return count
+# print(count_st("srd45567 gt6 tg"))
+
+# Напиши функцию, которая: принимает строку
+# считает: сколько букв, сколько цифр
+# возвращает оба значения
+
+# def count_bought(st: str) -> int:
+#     count_num = 0
+#     count_str = 0
+#     for lit in st:
+#         if lit.isalpha():
+#             count_str += 1
+#         elif lit.isdigit():
+#             count_num +=1
+#     return count_str, count_num
+# print(count_bought("gft 567 dd 543 tt"))
+
+# пройти числа от 1 до num включительно
+# посчитать: сколько чисел делятся на 2
+# сколько чисел делятся на 3
+
+# def count_div(num: int):
+#     count_duo = 0
+#     count_threes = 0
+#     for i in range(1, num+1):
+#         if i % 2 ==0:
+#             count_duo +=1
+#         if i % 3 ==0:
+#             count_threes +=1
+#     return count_duo, count_threes
+# print(count_div(12))
+
+# Написать функцию:
+# Она должна пройтись по числам от 1 до num включительно и посчитать:
+# сколько чисел делятся на 2, сколько чисел делятся на 3
+# сколько чисел делятся одновременно на 2 и на 3
+# Функция должна вернуть три числа.
+
+def analyze_num(num: int):
+    count_two = 0
+    count_three = 0
+    count_bought = 0
+    for i in range(1, num+1):
+        if i % 2 ==0 and i % 3 ==0:
+            count_bought +=1
+        if i % 3 ==0:
+            count_three +=1
+        if i % 2 ==0:
+            count_two +=1
+    return count_two, count_three,count_bought
+print(analyze_num(12))
