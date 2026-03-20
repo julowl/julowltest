@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.webdriver import WebDriver
 from driver import chrome_web_driver as driver
+from selenium.webdriver.common.alert import Alert
 
 def test_abtest_one(driver):
     driver.get("https://the-internet.herokuapp.com/")
@@ -36,3 +37,18 @@ def test_basic_auth_click(driver):
     assert driver.current_url == "https://the-internet.herokuapp.com/basic_auth"
 
 
+def test_sign_in(driver):
+    username = "admin"
+    password = "admin"
+    assert "Congratulations!" in _auth(username,password,driver)
+
+def test_sign_in_wrong(driver):
+    username = "user"
+    password = "user"
+    assert "Congratulations!"  not in _auth(username,password,driver)
+
+
+def _auth(username:str,password:str, driver) -> str:
+    driver.get(f"https://{username}:{password}@the-internet.herokuapp.com/basic_auth")
+    final_page = driver.find_element(By.XPATH, "/html")
+    return final_page.text
