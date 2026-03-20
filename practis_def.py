@@ -2,6 +2,8 @@
 # Она ничего не принимает
 # Она печатает строку
 
+
+
 # def print_hi():
 #     print("Hi!")
 # print_hi()
@@ -170,16 +172,48 @@
 # сколько чисел делятся одновременно на 2 и на 3
 # Функция должна вернуть три числа.
 
-def analyze_num(num: int):
-    count_two = 0
-    count_three = 0
-    count_bought = 0
-    for i in range(1, num+1):
-        if i % 2 ==0 and i % 3 ==0:
-            count_bought +=1
-        if i % 3 ==0:
-            count_three +=1
-        if i % 2 ==0:
-            count_two +=1
-    return count_two, count_three,count_bought
-print(analyze_num(12))
+# def analyze_num(num: int):
+#     count_two = 0
+#     count_three = 0
+#     count_bought = 0
+#     for i in range(1, num+1):
+#         if i % 2 ==0 and i % 3 ==0:
+#             count_bought +=1
+#         if i % 3 ==0:
+#             count_three +=1
+#         if i % 2 ==0:
+#             count_two +=1
+#     return count_two, count_three,count_bought
+# print(analyze_num(12))
+
+# Написать функцию, которая:
+# принимает число
+# возвращает, чётное оно или нет (True / False)
+
+# def bol_rez(num: int) -> bool:
+#         if num % 2 ==0:
+#             return True
+#         else:
+#             return False
+#
+# num = 18
+# rez = bol_rez(num)
+# print(rez)
+
+
+# Написать функцию, которая:
+# принимает список чисел
+# возвращает True, если хотя бы одно число чётное
+# иначе False
+
+def spisoc_num(num : list) -> bool:
+    for n in num:
+        if n % 2 ==0:
+             return True
+    return False
+
+
+#num = [7, 11, 4, 9, 10, 3]
+num = [7, 11, 13, 9, 11, 3]
+res = spisoc_num(num)
+print(res)
